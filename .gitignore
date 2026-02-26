@@ -1,0 +1,40 @@
+# Build artifacts
+bin/
+build/
+*.class
+
+# JAR files
+*.jar
+!lib/*.jar
+
+# Log files
+*.log
+
+# Session data files
+.redmine_notifications.dat
+.redmine_notified_tasks.dat
+
+# User configuration (use template instead)
+redmine_config.properties
+!redmine_config.properties.template
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# IDE specific files
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp

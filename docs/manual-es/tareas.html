@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .method-box {
+            background: #e8f5e9;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-left: 4px solid #27ae60;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html">1. Introducción</a>
+            <a href="instalacion.html">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html" class="active">4. Gestión de Tareas</a>
+            <a href="filtros.html">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html">6. Notificaciones</a>
+            <a href="gemelas.html">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html">9. Informes y Métricas</a>
+            <a href="offline.html">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="interfaz.html" class="back-link">← Anterior: Interfaz Principal</a>
+
+        <h1>4. Gestión de Tareas</h1>
+
+        <h2>4.1 Crear Nueva Tarea</h2>
+
+        <div class="card">
+            <h3>Métodos para Crear</h3>
+            <div class="method-box">
+                <strong>Método 1:</strong> Botón "Crear" en panel de filtros
+            </div>
+            <div class="method-box">
+                <strong>Método 2:</strong> Atajo de teclado <code>Ctrl+N</code>
+            </div>
+            <div class="method-box">
+                <strong>Método 3:</strong> Menú Cliente → Crear Tarea
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Campos del Formulario</h3>
+            <table>
+                <tr>
+                    <th>Campo</th>
+                    <th>Obligatorio</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td><strong>Asunto</strong></td>
+                    <td>✅ Sí</td>
+                    <td>Título de la tarea (no puede estar vacío)</td>
+                </tr>
+                <tr>
+                    <td><strong>Descripción</strong></td>
+                    <td>No</td>
+                    <td>Detalles completos (soporta Markdown/Textile)</td>
+                </tr>
+                <tr>
+                    <td><strong>Tracker</strong></td>
+                    <td>✅ Sí</td>
+                    <td>Tipo: Error, Funcionalidad, Soporte, etc.</td>
+                </tr>
+                <tr>
+                    <td><strong>Estado</strong></td>
+                    <td>✅ Sí</td>
+                    <td>Estado inicial (normalmente "Nuevo")</td>
+                </tr>
+                <tr>
+                    <td><strong>Prioridad</strong></td>
+                    <td>✅ Sí</td>
+                    <td>Baja, Normal, Alta, Urgente, Inmediata</td>
+                </tr>
+                <tr>
+                    <td><strong>Asignado</strong></td>
+                    <td>No</td>
+                    <td>Persona responsable</td>
+                </tr>
+                <tr>
+                    <td><strong>Versión</strong></td>
+                    <td>No</td>
+                    <td>Hito/versión objetivo</td>
+                </tr>
+                <tr>
+                    <td><strong>Categoría</strong></td>
+                    <td>No</td>
+                    <td>Clasificación</td>
+                </tr>
+                <tr>
+                    <td><strong>Fecha Inicio</strong></td>
+                    <td>No</td>
+                    <td>Fecha de inicio planificada</td>
+                </tr>
+                <tr>
+                    <td><strong>Fecha Fin</strong></td>
+                    <td>No</td>
+                    <td>Fecha límite</td>
+                </tr>
+                <tr>
+                    <td><strong>Horas Estimadas</strong></td>
+                    <td>No</td>
+                    <td>Estimación de esfuerzo</td>
+                </tr>
+                <tr>
+                    <td><strong>% Completado</strong></td>
+                    <td>No</td>
+                    <td>Porcentaje de avance (0-100)</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>4.2 Editar Tarea</h2>
+
+        <div class="card">
+            <h3>Métodos para Editar</h3>
+            <div class="method-box">
+                <strong>Método 1:</strong> Doble click en la tarea
+            </div>
+            <div class="method-box">
+                <strong>Método 2:</strong> Seleccionar tarea y presionar <code>Enter</code>
+            </div>
+            <div class="method-box">
+                <strong>Método 3:</strong> Atajo <code>Ctrl+E</code>
+            </div>
+            <div class="method-box">
+                <strong>Método 4:</strong> Click derecho → Editar
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Formulario de Edición</h3>
+            <p>Mismo formulario que crear, con valores actuales pre-llenados, más:</p>
+            <ul>
+                <li><strong>Pestaña Notas</strong> - Historial completo de cambios y comentarios
+                    <ul>
+                        <li><strong>Ordenamiento</strong> - Combo box para elegir orden de visualización</li>
+                        <li>Más recientes primero (predeterminado)</li>
+                        <li>Más antiguas primero (orden cronológico)</li>
+                        <li>Útil para seguir la evolución de la tarea desde el inicio</li>
+                    </ul>
+                </li>
+                <li><strong>Adjuntos existentes</strong> - Lista de archivos ya subidos</li>
+                <li><strong>Tiempo registrado</strong> - Horas ya logueadas</li>
+            </ul>
+        </div>
+
+        <h2>4.3 Eliminar Tarea</h2>
+
+        <div class="alert alert-danger">
+            <h3>⚠️ Advertencia</h3>
+            <p>Eliminar una tarea es una operación <strong>irreversible</strong>. La tarea se borrará permanentemente
+                del servidor Redmine.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cómo Eliminar</h3>
+            <ol>
+                <li>Click derecho en la tarea</li>
+                <li>Seleccionar "Eliminar"</li>
+                <li>Confirmar en el diálogo de confirmación</li>
+            </ol>
+        </div>
+
+        <h2>4.4 Menú Contextual (Click Derecho)</h2>
+
+        <div class="card">
+            <h3>Operaciones Básicas</h3>
+            <ul>
+                <li><strong>Editar</strong> - Abrir formulario de edición</li>
+                <li><strong>Eliminar</strong> - Borrar tarea (con confirmación)</li>
+                <li><strong>Copiar ID</strong> - Copiar número al portapapeles</li>
+                <li><strong>Copiar Asunto + Descripción</strong> - Formato para email/chat</li>
+                <li><strong>Abrir en Navegador</strong> - Ver en interfaz web de Redmine</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Operaciones Avanzadas</h3>
+            <ul>
+                <li><strong>Crear Subtarea</strong> - Nueva tarea hija vinculada automáticamente</li>
+                <li><strong>Clonar a Otro Servidor</strong> - Copiar tarea a servidor gemelo</li>
+                <li><strong>Emparejar con Gemela</strong> - Buscar/vincular tarea equivalente</li>
+                <li><strong>Descargar a Escritorio</strong> - Guardar completa en carpeta local</li>
+                <li><strong>Pin/Quitar Pin</strong> - Marcar como favorita (⭐)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Operaciones Múltiples (Selección Múltiple)</h3>
+            <p>Selecciona varias tareas con <code>Ctrl+Click</code> o <code>Shift+Click</code>, luego:</p>
+            <ul>
+                <li><strong>Edición Masiva</strong> - Cambiar campos en varias tareas</li>
+                <li><strong>Cierre Masivo</strong> - Cerrar múltiples tareas</li>
+                <li><strong>Cierre Sincronizado</strong> - Cerrar tareas y sus gemelas</li>
+            </ul>
+        </div>
+
+        <h2>4.5 Fijar Tareas (Pin)</h2>
+
+        <div class="card">
+            <h3>¿Qué es Fijar?</h3>
+            <p>Marcar tareas importantes para que siempre aparezcan al inicio de la lista, independientemente del orden
+                o filtros.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cómo Fijar</h3>
+            <ol>
+                <li>Click derecho en tarea</li>
+                <li>Seleccionar "⭐ Pin (Favorito)"</li>
+                <li>La tarea mostrará estrella dorada y aparecerá primero</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Cómo Quitar Pin</h3>
+            <ol>
+                <li>Click derecho en tarea fijada</li>
+                <li>Seleccionar "⭐ Quitar Pin"</li>
+                <li>La tarea volverá a su posición normal</li>
+            </ol>
+        </div>
+
+        <h2>4.6 Crear Subtarea</h2>
+
+        <div class="card">
+            <p>Las subtareas son tareas hijas vinculadas a una tarea padre, útiles para dividir trabajo complejo.</p>
+
+            <h3>Pasos</h3>
+            <ol>
+                <li>Click derecho en tarea padre</li>
+                <li>Seleccionar "Crear Subtarea"</li>
+                <li>Se abre formulario con tarea padre ya vinculada</li>
+                <li>Completar datos de la subtarea</li>
+                <li>Guardar</li>
+            </ol>
+        </div>
+
+        <h2>4.7 Descargar Tarea a Escritorio</h2>
+
+        <div class="card">
+            <h3>¿Qué se Descarga?</h3>
+            <p>Se crea una carpeta con:</p>
+            <ul>
+                <li><code>Detalles.txt</code> - Información completa de la tarea</li>
+                <li><code>Historial.txt</code> - Cronología de cambios y comentarios</li>
+                <li>Todos los <strong>adjuntos</strong> de la tarea</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Pasos</h3>
+            <ol>
+                <li>Click derecho en tarea</li>
+                <li>Seleccionar "Descargar a Escritorio"</li>
+                <li>Se crea carpeta en ruta configurada</li>
+                <li>Nombre de carpeta según patrón: <code>{id}_{subject}</code></li>
+            </ol>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>💡 Consejos</h3>
+            <ul>
+                <li>Usa <strong>Pin</strong> para tareas en las que trabajas frecuentemente</li>
+                <li><strong>Copiar ID</strong> es útil para referencias en chats o emails</li>
+                <li><strong>Descargar a Escritorio</strong> es ideal para trabajar offline o archivar</li>
+                <li>Las <strong>subtareas</strong> ayudan a organizar trabajo complejo en partes manejables</li>
+            </ul>
+        </div>
+
+        <div
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; display: flex; justify-content: space-between;">
+            <a href="interfaz.html" class="btn" style="background: #95a5a6;">← Anterior: Interfaz Principal</a>
+            <a href="filtros.html" class="btn">Siguiente: Filtros y Búsqueda →</a>
+        </div>
+    </div>
+</body>
+
+</html>

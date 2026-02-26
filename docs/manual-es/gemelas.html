@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas Gemelas - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border: 1px solid #e1e8ed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html">1. Introducción</a>
+            <a href="instalacion.html">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html">4. Gestión de Tareas</a>
+            <a href="filtros.html">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html">6. Notificaciones</a>
+            <a href="gemelas.html" class="active">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html">9. Informes y Métricas</a>
+            <a href="offline.html">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="notificaciones.html" class="back-link">← Anterior: Notificaciones</a>
+
+        <h1>7. Sincronización de Tareas Gemelas</h1>
+
+        <h2>7.1 Concepto de Tareas Gemelas</h2>
+
+        <div class="card">
+            <h3>¿Qué son Tareas Gemelas?</h3>
+            <p>Tareas relacionadas en diferentes servidores Redmine que representan el mismo trabajo.</p>
+        </div>
+
+        <div class="card" style="background: #e3f2fd; border-left: 4px solid #2196f3;">
+            <h3>📋 Caso de Uso Típico</h3>
+            <p>Empresa con servidor interno y servidor de cliente externo:</p>
+            <ul>
+                <li><strong>Servidor A (Interno):</strong> Tarea #1234 "Implementar login"</li>
+                <li><strong>Servidor B (Cliente):</strong> Tarea #5678 "Implementar login [Ref #1234]"</li>
+            </ul>
+            <p>Ambas tareas están vinculadas y pueden gestionarse conjuntamente.</p>
+        </div>
+
+        <h2>7.2 Configurar Patrón de Referencia</h2>
+
+        <div class="card">
+            <h3>Ubicación</h3>
+            <p>Configuración de Cliente → Patrón de Referencia</p>
+        </div>
+
+        <div class="card">
+            <h3>Formato del Patrón</h3>
+            <p>Usa la variable <code>{id}</code> para representar el ID de la tarea:</p>
+            <div class="example-box">
+                <p><strong>Patrón:</strong> <code>[Ref #{id}]</code></p>
+                <p><strong>Resultado:</strong> <code>[Ref #1234]</code> en el asunto de la tarea gemela</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Ejemplos de Patrones</h3>
+            <table>
+                <tr>
+                    <th>Patrón</th>
+                    <th>Ejemplo de Resultado</th>
+                </tr>
+                <tr>
+                    <td><code>[Ref #{id}]</code></td>
+                    <td>[Ref #1234]</td>
+                </tr>
+                <tr>
+                    <td><code>(Twin: #{id})</code></td>
+                    <td>(Twin: #1234)</td>
+                </tr>
+                <tr>
+                    <td><code>Related to task {id}</code></td>
+                    <td>Related to task 1234</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="alert alert-warning">
+            <h3>⚠️ Importante</h3>
+            <p>El patrón debe ser único y distintivo para evitar falsos positivos. Coordina el patrón con todos los
+                servidores que uses.</p>
+        </div>
+
+        <h2>7.3 Clonar Tarea a Otro Servidor</h2>
+
+        <div class="card">
+            <h3>Pasos</h3>
+            <ol>
+                <li>Click derecho en tarea original</li>
+                <li>Seleccionar "Clonar a Otro Servidor"</li>
+                <li>Elegir servidor destino del dropdown</li>
+                <li>Revisar datos pre-llenados:
+                    <ul>
+                        <li>Asunto (copiado)</li>
+                        <li>Descripción (copiada + referencia automática)</li>
+                        <li>Prioridad (copiada)</li>
+                    </ul>
+                </li>
+                <li>Ajustar campos si es necesario</li>
+                <li>Click en "Guardar"</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>¿Qué se Copia Automáticamente?</h3>
+            <ul>
+                <li>✅ Asunto</li>
+                <li>✅ Descripción (con referencia añadida)</li>
+                <li>✅ Prioridad</li>
+                <li>❌ Estado (usa estado por defecto del servidor destino)</li>
+                <li>❌ Asignado (debes asignarlo manualmente)</li>
+                <li>❌ Versión (debes seleccionarla manualmente)</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <h4>Ejemplo de Descripción Generada</h4>
+            <p><strong>Original:</strong></p>
+            <pre>Implementar sistema de login con OAuth2</pre>
+            <p><strong>En tarea gemela:</strong></p>
+            <pre>Implementar sistema de login con OAuth2
+
+---
+Tarea relacionada en servidor interno: [Ref #1234]</pre>
+        </div>
+
+        <h2>7.4 Emparejar con Tarea Gemela</h2>
+
+        <div class="card">
+            <h3>Detección Automática</h3>
+            <p>El sistema busca automáticamente referencias en asuntos:</p>
+            <ul>
+                <li>Usa el patrón configurado</li>
+                <li>Escanea asuntos de tareas en servidores peer</li>
+                <li>Marca tareas como emparejadas cuando encuentra coincidencia</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Emparejamiento Manual</h3>
+            <ol>
+                <li>Click derecho en tarea</li>
+                <li>Seleccionar "Emparejar con Gemela"</li>
+                <li>Buscar tarea en servidor peer (por ID o asunto)</li>
+                <li>Seleccionar tarea gemela</li>
+                <li>Confirmar emparejamiento</li>
+            </ol>
+        </div>
+
+        <h2>7.5 Cierre Sincronizado</h2>
+
+        <div class="card" style="background: #e8f5e9; border-left: 4px solid #27ae60;">
+            <h3>✨ Funcionalidad Estrella</h3>
+            <p>Cierra una tarea y su gemela simultáneamente con un solo clic.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cierre Individual Sincronizado</h3>
+            <ol>
+                <li>Click derecho en tarea emparejada</li>
+                <li>Seleccionar "Cierre Sincronizado"</li>
+                <li>Sistema detecta gemela automáticamente</li>
+                <li>Muestra diálogo con ambas tareas</li>
+                <li>Seleccionar estado final para cada una</li>
+                <li>Opcionalmente seleccionar versión</li>
+                <li>Click en "Cerrar Ambas"</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Cierre Masivo Sincronizado</h3>
+            <ol>
+                <li>Seleccionar múltiples tareas (Ctrl+Click)</li>
+                <li>Click derecho → "Multi-cierre Sincronizado"</li>
+                <li>Sistema detecta cuáles tienen gemelas</li>
+                <li>Muestra lista de todas las tareas a cerrar</li>
+                <li>Seleccionar estados y versiones</li>
+                <li>Confirmar cierre masivo</li>
+            </ol>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>💡 Validación Inteligente</h3>
+            <p>El sistema consulta ambos servidores para obtener transiciones de estado válidas. Solo muestra estados a
+                los que puedes cambiar según el workflow de cada servidor.</p>
+        </div>
+
+        <h2>7.6 Opciones Avanzadas</h2>
+
+        <div class="card">
+            <h3>Limpiar Campo de Versión</h3>
+            <p>Durante cierre masivo, puedes:</p>
+            <ul>
+                <li>Seleccionar una versión específica</li>
+                <li>Seleccionar <code>[Clear / None]</code> para vaciar el campo</li>
+                <li>Dejar sin cambios (no modificar versión actual)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Múltiples Servidores</h3>
+            <p>Si tienes más de 2 servidores:</p>
+            <ul>
+                <li>La sincronización es por pares (A↔B, B↔C)</li>
+                <li>No hay sincronización transitiva automática (A↔C)</li>
+                <li>Debes emparejar explícitamente cada par</li>
+            </ul>
+        </div>
+
+        <h2>7.7 Mejores Prácticas</h2>
+
+        <div class="card">
+            <h3>Recomendaciones</h3>
+            <ul>
+                <li>Usa un <strong>patrón de referencia único</strong> y consistente</li>
+                <li><strong>Clona tareas</strong> en lugar de crearlas manualmente para mantener vinculación</li>
+                <li>Usa <strong>cierre sincronizado</strong> para evitar tareas huérfanas</li>
+                <li>Revisa periódicamente tareas sin emparejar</li>
+                <li>Documenta el patrón de referencia en tu equipo</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>✅ Beneficios de Tareas Gemelas</h3>
+            <ul>
+                <li>Mantén sincronizados proyectos internos y externos</li>
+                <li>Ahorra tiempo con cierre simultáneo</li>
+                <li>Trazabilidad completa entre servidores</li>
+                <li>Reduce errores de gestión manual</li>
+            </ul>
+        </div>
+
+        <div
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; display: flex; justify-content: space-between;">
+            <a href="notificaciones.html" class="btn" style="background: #95a5a6;">← Anterior: Notificaciones</a>
+            <a href="tiempo.html" class="btn">Siguiente: Registro de Tiempo →</a>
+        </div>
+    </div>
+</body>
+
+</html>

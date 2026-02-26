@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .faq-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item .question {
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item .answer {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html">1. Introducción</a>
+            <a href="instalacion.html">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html">4. Gestión de Tareas</a>
+            <a href="filtros.html">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html">6. Notificaciones</a>
+            <a href="gemelas.html">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html">9. Informes y Métricas</a>
+            <a href="offline.html">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html" class="active">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="atajos.html" class="back-link">← Anterior: Atajos de Teclado</a>
+
+        <h1>13. Preguntas Frecuentes (FAQ)</h1>
+
+        <h2>Conexión y Autenticación</h2>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Dónde obtengo la clave API?</p>
+            <p class="answer"><strong>R:</strong> En Redmine web → Mi cuenta → Clave de acceso API (columna derecha).
+                Haz clic en "Mostrar" para revelar la clave completa.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Puedo usar usuario y contraseña en lugar de API key?</p>
+            <p class="answer"><strong>R:</strong> Sí, pero la API key es más segura y recomendada. Si usas
+                usuario/contraseña, configúralos en los campos correspondientes en lugar de la API key.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Cómo sé si mi conexión funciona?</p>
+            <p class="answer"><strong>R:</strong> Al guardar la configuración, la app intenta conectar. Verás un mensaje
+                de éxito/error en el panel de log (parte inferior). Si hay error, revisa URL, API key e ID de proyecto.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: Error "Connection refused" o "Connection timeout"</p>
+            <p class="answer"><strong>R:</strong> Verifica:
+            <ul>
+                <li>Que la URL sea accesible desde tu red</li>
+                <li>Que no haya firewall bloqueando la conexión</li>
+                <li>Que el servidor Redmine esté funcionando</li>
+                <li>Que uses HTTPS si el servidor lo requiere</li>
+            </ul>
+            </p>
+        </div>
+
+        <h2>Tareas y Datos</h2>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Por qué no veo todas mis tareas?</p>
+            <p class="answer"><strong>R:</strong> Revisa:
+            <ul>
+                <li>Filtros activos (botón "Limpiar Filtros")</li>
+                <li>Límite de tareas en configuración (aumenta si es necesario)</li>
+                <li>Permisos en Redmine (debes tener acceso al proyecto)</li>
+                <li>Opción "Mostrar cerradas por defecto" en configuración</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Cómo actualizo los datos?</p>
+            <p class="answer"><strong>R:</strong> Usa el botón "Refrescar" en el panel de filtros o presiona
+                <code>F5</code>. La aplicación también actualiza automáticamente según el intervalo configurado (por
+                defecto 5 minutos).</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Los cambios se guardan automáticamente?</p>
+            <p class="answer"><strong>R:</strong> No, debes hacer clic en "Guardar" en cada diálogo de edición. Esto
+                previene cambios accidentales.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Puedo deshacer cambios?</p>
+            <p class="answer"><strong>R:</strong> No hay función de deshacer. Los cambios se envían inmediatamente al
+                servidor Redmine. Puedes ver el historial de cambios en la pestaña "Historial" de cada tarea.</p>
+        </div>
+
+        <h2>Modo Offline</h2>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Puedo trabajar sin internet?</p>
+            <p class="answer"><strong>R:</strong> Sí, en modo solo lectura con datos cacheados. Puedes ver tareas,
+                buscar y filtrar, pero no crear, editar o eliminar hasta recuperar conexión.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Cuánto tiempo duran los datos en caché?</p>
+            <p class="answer"><strong>R:</strong> Por defecto:
+            <ul>
+                <li>Tareas: 5 minutos</li>
+                <li>Metadatos (estados, prioridades, etc.): 30 minutos</li>
+                <li>Detalles de tarea: 2 minutos</li>
+            </ul>
+            El caché se actualiza automáticamente al refrescar.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Cómo salgo del modo offline?</p>
+            <p class="answer"><strong>R:</strong> Automático al recuperar conexión, o usa el botón "Reintentar
+                Conexión". El indicador rojo "MODO OFFLINE" desaparecerá cuando vuelvas a estar online.</p>
+        </div>
+
+        <h2>Notificaciones</h2>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Por qué no recibo notificaciones?</p>
+            <p class="answer"><strong>R:</strong> Verifica:
+            <ul>
+                <li>Permisos de notificaciones del sistema operativo</li>
+                <li>Sistema de bandeja soportado (Windows 7+, Linux con tray, macOS)</li>
+                <li>Que la aplicación esté ejecutándose</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Puedo desactivar notificaciones?</p>
+            <p class="answer"><strong>R:</strong> Actualmente no hay opción global para desactivarlas. Puedes cerrar el
+                Centro de Notificaciones para no ver el historial, pero las notificaciones del sistema seguirán
+                apareciendo.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Las notificaciones funcionan si cierro la aplicación?</p>
+            <p class="answer"><strong>R:</strong> No, la aplicación debe estar ejecutándose para recibir notificaciones.
+                Considera minimizarla en lugar de cerrarla.</p>
+        </div>
+
+        <h2>Rendimiento</h2>
+
+        <div class="faq-item">
+            <p class="question">P: La aplicación va lenta, ¿qué hago?</p>
+            <p class="answer"><strong>R:</strong> Intenta:
+            <ul>
+                <li>Reducir límite de tareas en configuración</li>
+                <li>Aumentar intervalo de refresh (menos actualizaciones automáticas)</li>
+                <li>Limpiar caché (reiniciar aplicación)</li>
+                <li>Cerrar clientes no usados</li>
+                <li>Aumentar memoria Java: <code>java -Xmx1g -jar RedmineConnector.jar</code></li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Cuántos clientes puedo tener?</p>
+            <p class="answer"><strong>R:</strong> No hay límite técnico, pero recomendamos máximo 5 clientes simultáneos
+                para buen rendimiento. Cada cliente consume memoria y recursos de red.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Cómo libero memoria?</p>
+            <p class="answer"><strong>R:</strong> Reinicia la aplicación periódicamente. El caché se limpia
+                automáticamente, pero un reinicio completo libera toda la memoria.</p>
+        </div>
+
+        <h2>Sincronización de Gemelas</h2>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Cómo funciona la detección automática de gemelas?</p>
+            <p class="answer"><strong>R:</strong> Busca el patrón de referencia configurado (ej:
+                <code>[Ref #123]</code>) en los asuntos de las tareas. Si encuentra el patrón, vincula automáticamente
+                las tareas como gemelas.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Puedo tener más de 2 servidores sincronizados?</p>
+            <p class="answer"><strong>R:</strong> Sí, pero la sincronización es por pares (A↔B, B↔C, etc.). No hay
+                sincronización automática A↔C si solo están vinculadas A↔B y B↔C.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: ¿Qué pasa si cierro una gemela sin cerrar la otra?</p>
+            <p class="answer"><strong>R:</strong> Nada, puedes cerrarlas independientemente. El "Cierre Sincronizado" es
+                opcional y solo se usa cuando quieres cerrar ambas al mismo tiempo.</p>
+        </div>
+
+        <h2>Errores Comunes</h2>
+
+        <div class="faq-item">
+            <p class="question">P: Error "Invalid API key"</p>
+            <p class="answer"><strong>R:</strong> La clave API es incorrecta o ha expirado. Genera una nueva en Redmine
+                → Mi cuenta → Clave de acceso API → Restablecer.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: Error "Project not found"</p>
+            <p class="answer"><strong>R:</strong> El ID del proyecto es incorrecto o no tienes permisos. Verifica el ID
+                exacto (case-sensitive) en la URL de Redmine.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">P: Error "SSL certificate problem"</p>
+            <p class="answer"><strong>R:</strong> El servidor usa un certificado SSL no válido o autofirmado. Contacta a
+                tu administrador de sistemas para instalar el certificado correcto.</p>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>📖 Más Ayuda</h3>
+            <p>Si tu pregunta no está aquí:</p>
+            <ul>
+                <li>Consulta la <a href="../config/index.html">Guía de Configuración</a> para detalles técnicos</li>
+                <li>Revisa la <a href="../technical/index.html">Arquitectura Técnica</a> para entender el funcionamiento
+                </li>
+                <li>Contacta al soporte técnico de tu organización</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; text-align: center;">
+            <a href="atajos.html" class="btn" style="background: #95a5a6;">← Anterior: Atajos de Teclado</a>
+            <a href="index.html" class="btn" style="margin-left: 1rem;">Volver al Índice</a>
+        </div>
+    </div>
+</body>
+
+</html>

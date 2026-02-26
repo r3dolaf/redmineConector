@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes y Métricas - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html">1. Introducción</a>
+            <a href="instalacion.html">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html">4. Gestión de Tareas</a>
+            <a href="filtros.html">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html">6. Notificaciones</a>
+            <a href="gemelas.html">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html" class="active">9. Informes y Métricas</a>
+            <a href="offline.html">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="tiempo.html" class="back-link">← Anterior: Registro de Tiempo</a>
+
+        <h1>9. Informes y Métricas</h1>
+
+        <h2>9.1 Dashboard de Métricas</h2>
+
+        <div class="card">
+            <h3>Acceso</h3>
+            <p><strong>Menú Cliente → Dashboard de Métricas</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Gráfico de Estados</h3>
+            <ul>
+                <li><strong>Barras horizontales</strong> - Distribución visual de tareas por estado</li>
+                <li><strong>Colores configurables</strong> - Personaliza colores por estado</li>
+                <li><strong>Tooltips interactivos</strong> - Números exactos al pasar el mouse</li>
+                <li><strong>Porcentajes</strong> - Proporción de cada estado respecto al total</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Gráfico de Prioridades</h3>
+            <ul>
+                <li><strong>Distribución por nivel</strong> - Baja, Normal, Alta, Urgente, Inmediata</li>
+                <li><strong>Identificación rápida</strong> - Detecta cuellos de botella de urgencias</li>
+                <li><strong>Colores distintivos</strong> - Código de colores por prioridad</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Estadísticas Generales</h3>
+            <table>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td><strong>Total de tareas</strong></td>
+                    <td>Número total de tareas en el proyecto</td>
+                </tr>
+                <tr>
+                    <td><strong>Abiertas vs Cerradas</strong></td>
+                    <td>Comparación de tareas activas y completadas</td>
+                </tr>
+                <tr>
+                    <td><strong>Promedio de horas</strong></td>
+                    <td>Horas estimadas promedio por tarea</td>
+                </tr>
+                <tr>
+                    <td><strong>Tareas vencidas</strong></td>
+                    <td>Número de tareas con fecha límite pasada</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Botón "Copiar Resumen"</h3>
+            <ul>
+                <li>Copia todas las estadísticas en formato texto</li>
+                <li>Listo para pegar en emails o chats</li>
+                <li>Incluye gráficos en formato ASCII</li>
+            </ul>
+        </div>
+
+        <h2>9.2 Informe de Horas</h2>
+
+        <div class="card">
+            <h3>Acceso</h3>
+            <p><strong>Menú Cliente → Informes → Horas</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Filtros Disponibles</h3>
+            <ul>
+                <li><strong>Rango de fechas</strong> - Desde/Hasta para período específico</li>
+                <li><strong>Usuario específico</strong> - Ver horas de una persona</li>
+                <li><strong>Actividad específica</strong> - Filtrar por tipo de trabajo</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Tabla de Resultados</h3>
+            <p><strong>Columnas:</strong></p>
+            <ul>
+                <li>Fecha - Día del registro</li>
+                <li>Usuario - Quién registró</li>
+                <li>Tarea - ID y asunto</li>
+                <li>Horas - Tiempo registrado</li>
+                <li>Actividad - Tipo de trabajo</li>
+                <li>Comentario - Descripción del trabajo</li>
+            </ul>
+            <p><strong>Totales:</strong></p>
+            <ul>
+                <li>Totales por usuario</li>
+                <li>Totales por actividad</li>
+                <li>Total general del período</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Exportar Datos</h3>
+            <ul>
+                <li><strong>Botón "Copiar Tabla"</strong> - Copia al portapapeles</li>
+                <li><strong>Formato compatible con Excel</strong> - Pega directamente en hojas de cálculo</li>
+                <li><strong>Mantiene estructura</strong> - Columnas y totales preservados</li>
+            </ul>
+        </div>
+
+        <h2>9.3 Informe de Tareas por Categoría</h2>
+
+        <div class="card">
+            <h3>Acceso</h3>
+            <p><strong>Menú Cliente → Informes → Categorías</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Visualización</h3>
+            <ul>
+                <li><strong>Tabla con conteo</strong> - Número de tareas por categoría</li>
+                <li><strong>Porcentaje del total</strong> - Proporción de cada categoría</li>
+                <li><strong>Gráfico de barras</strong> - Representación visual</li>
+                <li><strong>Ordenamiento</strong> - Por nombre o por cantidad</li>
+            </ul>
+        </div>
+
+        <h2>9.4 Informe de Versiones</h2>
+
+        <div class="card">
+            <h3>Acceso</h3>
+            <p><strong>Menú Cliente → Gestor de Versiones</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Información por Versión</h3>
+            <table>
+                <tr>
+                    <th>Campo</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td><strong>Nombre</strong></td>
+                    <td>Nombre de la versión/hito</td>
+                </tr>
+                <tr>
+                    <td><strong>Descripción</strong></td>
+                    <td>Detalles del release</td>
+                </tr>
+                <tr>
+                    <td><strong>Fecha inicio/fin</strong></td>
+                    <td>Período planificado</td>
+                </tr>
+                <tr>
+                    <td><strong>Progreso</strong></td>
+                    <td>Porcentaje de completitud</td>
+                </tr>
+                <tr>
+                    <td><strong>Tareas</strong></td>
+                    <td>Abiertas vs Cerradas</td>
+                </tr>
+                <tr>
+                    <td><strong>Estado</strong></td>
+                    <td>Abierta o Cerrada</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Email de Despliegue</h3>
+            <ul>
+                <li><strong>Botón "Generar Email de Despliegue"</strong></li>
+                <li>Crea email automático con changelog</li>
+                <li>Lista de tareas cerradas en la versión</li>
+                <li>Resumen de cambios por categoría</li>
+                <li>Formato profesional listo para enviar</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>💡 Consejos de Uso</h3>
+            <ul>
+                <li>Usa el <strong>Dashboard</strong> para reuniones diarias de seguimiento</li>
+                <li>El <strong>informe de horas</strong> es ideal para facturación y reportes mensuales</li>
+                <li>El <strong>email de despliegue</strong> ahorra tiempo en comunicaciones de release</li>
+                <li>Exporta datos a Excel para análisis más profundos</li>
+            </ul>
+        </div>
+
+        <div
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; display: flex; justify-content: space-between;">
+            <a href="tiempo.html" class="btn" style="background: #95a5a6;">← Anterior: Registro de Tiempo</a>
+            <a href="offline.html" class="btn">Siguiente: Modo Offline →</a>
+        </div>
+    </div>
+</body>
+
+</html>

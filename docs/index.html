@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación - Redmine Connector Pro</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --bg: #f5f7fa;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --border: #e1e8ed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .doc-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .doc-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .doc-card h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .doc-card p {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-card .sections {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-card .sections li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .doc-card .sections li:last-child {
+            border-bottom: none;
+        }
+
+        .doc-card .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .doc-card .btn:hover {
+            background: #2980b9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #7f8c8d;
+            margin-top: 3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .badge.user {
+            background: #e8f5e9;
+            color: #27ae60;
+        }
+
+        .badge.tech {
+            background: #e3f2fd;
+            color: #2196f3;
+        }
+
+        .badge.config {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .badge.dev {
+            background: #f3e5f5;
+            color: #9c27b0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>📚 Documentación Redmine Connector Pro</h1>
+        <p>Suite completa de documentación técnica y manuales de usuario</p>
+    </div>
+
+    <div class="container">
+        <div class="doc-grid">
+            <!-- Manual de Usuario (Español) -->
+            <div class="doc-card" onclick="window.location='manual-es/index.html'">
+                <div class="icon">📖</div>
+                <span class="badge user">Usuario</span>
+                <h2>Manual de Usuario</h2>
+                <p>Guía completa en español para usuarios finales</p>
+                <ul class="sections">
+                    <li>✓ Instalación y configuración</li>
+                    <li>✓ Gestión de tareas</li>
+                    <li>✓ Filtros y búsqueda</li>
+                    <li>✓ Notificaciones</li>
+                    <li>✓ Sincronización gemelas</li>
+                    <li>✓ Modo offline</li>
+                    <li>✓ Atajos de teclado</li>
+                </ul>
+                <a href="manual-es/index.html" class="btn">Abrir Manual →</a>
+            </div>
+
+            <!-- Arquitectura Técnica -->
+            <div class="doc-card" onclick="window.location='technical/index.html'">
+                <div class="icon">🏗️</div>
+                <span class="badge tech">Técnico</span>
+                <h2>Arquitectura Técnica</h2>
+                <p>Documentación técnica completa del sistema</p>
+                <ul class="sections">
+                    <li>✓ Visión general del sistema</li>
+                    <li>✓ Arquitectura en capas</li>
+                    <li>✓ Componentes principales</li>
+                    <li>✓ Flujo de datos</li>
+                    <li>✓ Servicios y caché</li>
+                    <li>✓ Seguridad</li>
+                    <li>✓ Deployment</li>
+                </ul>
+                <a href="technical/index.html" class="btn">Ver Arquitectura →</a>
+            </div>
+
+            <!-- Guía de Configuración -->
+            <div class="doc-card" onclick="window.location='config/index.html'">
+                <div class="icon">⚙️</div>
+                <span class="badge config">Configuración</span>
+                <h2>Guía de Configuración</h2>
+                <p>Referencia completa de configuración</p>
+                <ul class="sections">
+                    <li>✓ Estructura de archivos</li>
+                    <li>✓ Configuración de clientes</li>
+                    <li>✓ Ajustes de conexión</li>
+                    <li>✓ Sincronización</li>
+                    <li>✓ Notificaciones</li>
+                    <li>✓ Troubleshooting</li>
+                    <li>✓ Ejemplos completos</li>
+                </ul>
+                <a href="config/index.html" class="btn">Ver Configuración →</a>
+            </div>
+
+            <!-- Guía de Desarrollo -->
+            <div class="doc-card" onclick="window.location='developer/index.html'">
+                <div class="icon">🚀</div>
+                <span class="badge dev">Desarrollador</span>
+                <h2>Guía de Desarrollo</h2>
+                <p>Quick start para desarrolladores</p>
+                <ul class="sections">
+                    <li>✓ Quick start en 5 minutos</li>
+                    <li>✓ Estructura del proyecto</li>
+                    <li>✓ Build y ejecución</li>
+                    <li>✓ Añadir features</li>
+                    <li>✓ Testing</li>
+                    <li>✓ Debugging</li>
+                    <li>✓ Patrones de código</li>
+                </ul>
+                <a href="developer/index.html" class="btn">Empezar →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Redmine Connector Pro - Documentación Completa</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Versión 2.5</p>
+    </div>
+</body>
+
+</html>

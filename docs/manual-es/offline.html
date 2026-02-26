@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Offline - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html">1. Introducción</a>
+            <a href="instalacion.html">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html">4. Gestión de Tareas</a>
+            <a href="filtros.html">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html">6. Notificaciones</a>
+            <a href="gemelas.html">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html">9. Informes y Métricas</a>
+            <a href="offline.html" class="active">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <h1>10. Modo Offline</h1>
+
+        <h2>10.1 ¿Qué es el Modo Offline?</h2>
+
+        <div class="card">
+            <h3>Definición</h3>
+            <p>Modo de operación cuando no hay conexión al servidor Redmine. La aplicación sigue funcionando con datos
+                cacheados localmente.</p>
+        </div>
+
+        <div class="card" style="background: #e3f2fd; border-left: 4px solid #2196f3;">
+            <h3>🌐 Filosofía: Offline-First</h3>
+            <p>La aplicación está diseñada para funcionar siempre, incluso sin internet:</p>
+            <ul>
+                <li>Caché inteligente de datos</li>
+                <li>Transición automática a modo offline</li>
+                <li>Acceso a datos recientes</li>
+                <li>Recuperación automática al restaurar conexión</li>
+            </ul>
+        </div>
+
+        <h2>10.2 Activación Automática</h2>
+
+        <div class="card">
+            <h3>Trigger</h3>
+            <p>El modo offline se activa automáticamente cuando:</p>
+            <ul>
+                <li>Falla la conexión durante un refresh</li>
+                <li>El servidor Redmine no responde</li>
+                <li>Timeout de conexión</li>
+                <li>Error de red</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Indicadores Visuales</h3>
+            <ul>
+                <li><strong>Etiqueta roja</strong> en encabezado: "MODO OFFLINE (SÓLO LECTURA)"</li>
+                <li><strong>Botones deshabilitados</strong> para operaciones de escritura</li>
+                <li><strong>Mensaje en log</strong> indicando entrada en modo offline</li>
+                <li><strong>Botón "Reintentar Conexión"</strong> visible</li>
+            </ul>
+        </div>
+
+        <h2>10.3 Funcionalidades Disponibles</h2>
+
+        <div class="card" style="background: #e8f5e9; border-left: 4px solid #27ae60;">
+            <h3>✅ Permitido (Solo Lectura)</h3>
+            <ul>
+                <li>Ver lista de tareas (última versión cacheada)</li>
+                <li>Ver detalles de tareas</li>
+                <li>Buscar y filtrar tareas</li>
+                <li>Ordenar columnas</li>
+                <li>Ver adjuntos (si están en caché)</li>
+                <li>Leer notas y comentarios</li>
+                <li>Ver historial de cambios</li>
+                <li>Navegar entre pestañas</li>
+            </ul>
+        </div>
+
+        <div class="card" style="background: #ffebee; border-left: 4px solid #e74c3c;">
+            <h3>❌ No Permitido (Operaciones de Escritura)</h3>
+            <ul>
+                <li>Crear tareas</li>
+                <li>Editar tareas</li>
+                <li>Eliminar tareas</li>
+                <li>Registrar tiempo</li>
+                <li>Subir adjuntos</li>
+                <li>Actualizar wiki</li>
+                <li>Cambiar estados</li>
+                <li>Asignar tareas</li>
+            </ul>
+        </div>
+
+        <h2>10.4 Caché de Datos</h2>
+
+        <div class="card">
+            <h3>Duración del Caché</h3>
+            <table>
+                <tr>
+                    <th>Tipo de Dato</th>
+                    <th>TTL (Tiempo de Vida)</th>
+                </tr>
+                <tr>
+                    <td>Tareas</td>
+                    <td>5 minutos</td>
+                </tr>
+                <tr>
+                    <td>Detalles de tarea</td>
+                    <td>2 minutos</td>
+                </tr>
+                <tr>
+                    <td>Metadatos (estados, prioridades, usuarios)</td>
+                    <td>30 minutos</td>
+                </tr>
+                <tr>
+                    <td>Entradas de tiempo</td>
+                    <td>10 minutos</td>
+                </tr>
+                <tr>
+                    <td>Páginas wiki</td>
+                    <td>15 minutos</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Actualización de Caché</h3>
+            <p>El caché se actualiza automáticamente:</p>
+            <ul>
+                <li>Cada vez que refrescas datos (F5)</li>
+                <li>Según el intervalo de refresh configurado</li>
+                <li>Al realizar operaciones de escritura</li>
+            </ul>
+        </div>
+
+        <h2>10.5 Recuperación de Conexión</h2>
+
+        <div class="card">
+            <h3>Método 1: Automático</h3>
+            <p>La aplicación reintenta conexión periódicamente:</p>
+            <ul>
+                <li>Cada 30 segundos intenta reconectar</li>
+                <li>Al recuperar conexión, sale de modo offline automáticamente</li>
+                <li>Actualiza datos con versión más reciente del servidor</li>
+                <li>Indicador rojo desaparece</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Método 2: Manual</h3>
+            <p>Puedes forzar reintento de conexión:</p>
+            <ol>
+                <li>Click en botón "Reintentar Conexión"</li>
+                <li>O presiona F5 para refresh manual</li>
+                <li>Si conexión exitosa, modo offline se desactiva</li>
+                <li>Si falla, permanece en modo offline</li>
+            </ol>
+        </div>
+
+        <h2>10.6 Sincronización Post-Recuperación</h2>
+
+        <div class="card">
+            <h3>¿Qué Pasa al Recuperar Conexión?</h3>
+            <ul>
+                <li>Caché se actualiza con datos frescos del servidor</li>
+                <li>No hay conflictos (modo offline es solo lectura)</li>
+                <li>Cambios realizados por otros se reflejan inmediatamente</li>
+                <li>Operaciones de escritura vuelven a estar disponibles</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>💡 No Hay Pérdida de Datos</h3>
+            <p>Como el modo offline es solo lectura, no hay riesgo de conflictos o pérdida de datos al recuperar
+                conexión.</p>
+        </div>
+
+        <h2>10.7 Mejores Prácticas</h2>
+
+        <div class="card">
+            <h3>Para Trabajo Offline Planificado</h3>
+            <ol>
+                <li><strong>Antes de desconectar:</strong> Refresca datos (F5) para tener caché actualizado</li>
+                <li><strong>Durante offline:</strong> Usa la aplicación normalmente para consultar</li>
+                <li><strong>Al reconectar:</strong> Refresca inmediatamente para sincronizar</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Limitaciones a Considerar</h3>
+            <ul>
+                <li>Solo tienes acceso a datos cacheados recientemente</li>
+                <li>Tareas muy antiguas pueden no estar disponibles</li>
+                <li>Adjuntos grandes pueden no estar en caché</li>
+                <li>No puedes realizar cambios hasta recuperar conexión</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-warning">
+            <h3>⚠️ Nota Importante</h3>
+            <p>Si necesitas trabajar offline frecuentemente, considera:</p>
+            <ul>
+                <li>Aumentar el límite de tareas en configuración</li>
+                <li>Reducir el intervalo de refresh para caché más frecuente</li>
+                <li>Descargar tareas importantes a escritorio antes de desconectar</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>✅ Ventajas del Modo Offline</h3>
+            <ul>
+                <li>Continúa trabajando sin interrupciones</li>
+                <li>Consulta información reciente sin conexión</li>
+                <li>No pierdes productividad por problemas de red</li>
+                <li>Ideal para trabajo en movimiento o áreas sin cobertura</li>
+            </ul>
+        </div>
+
+        <div
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; display: flex; justify-content: space-between;">
+            <a href="informes.html" class="btn" style="background: #95a5a6;">← Anterior: Informes</a>
+            <a href="personalizacion.html" class="btn">Siguiente: Personalización →</a>
+        </div>
+    </div>
+</body>
+
+</html>

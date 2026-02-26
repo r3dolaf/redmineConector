@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Architecture - Redmine Connector</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .diagram {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid #e1e8ed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>🏗️ Technical Architecture</h3>
+        <nav>
+            <a href="index.html" class="active">Index</a>
+            <a href="overview.html">System Overview</a>
+            <a href="layers.html">Architecture Layers</a>
+            <a href="components.html">Core Components</a>
+            <a href="dataflow.html">Data Flow</a>
+            <a href="services.html">Service Layer</a>
+            <a href="ui.html">UI Architecture</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="caching.html">Caching Strategy</a>
+            <a href="security.html">Security</a>
+            <a href="deployment.html">Deployment</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="../index.html" class="back-link">← Back to main index</a>
+
+        <h1>🏗️ Technical Architecture Documentation</h1>
+
+        <div class="card">
+            <p>Comprehensive technical documentation covering the architecture, design patterns, and implementation
+                details of Redmine Connector Pro.</p>
+        </div>
+
+        <h2>Documentation Sections</h2>
+
+        <div class="card">
+            <h3>1. System Overview</h3>
+            <p>High-level overview of the system, technology stack, and key features.</p>
+            <ul>
+                <li>System description</li>
+                <li>Technology stack</li>
+                <li>Key capabilities</li>
+            </ul>
+            <a href="overview.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>2. Architecture Layers</h3>
+            <p>Detailed breakdown of the layered architecture and component responsibilities.</p>
+            <ul>
+                <li>UI Layer</li>
+                <li>Controller Layer</li>
+                <li>Service Layer</li>
+                <li>API Layer</li>
+            </ul>
+            <a href="layers.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>3. Core Components</h3>
+            <p>In-depth documentation of the main application components.</p>
+            <ul>
+                <li>RedmineConnectorApp (entry point)</li>
+                <li>MainFrame (application shell)</li>
+                <li>InstanceController (orchestration)</li>
+                <li>InstanceView (UI)</li>
+            </ul>
+            <a href="components.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>4. Data Flow</h3>
+            <p>Sequence diagrams and explanations of data flow through the system.</p>
+            <ul>
+                <li>Task refresh flow</li>
+                <li>Offline mode transition</li>
+                <li>Notification flow</li>
+            </ul>
+            <a href="dataflow.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>5. Service Layer</h3>
+            <p>Service architecture, interfaces, and implementations.</p>
+            <ul>
+                <li>DataService interface</li>
+                <li>HttpDataService (HTTP implementation)</li>
+                <li>CachedDataService (caching decorator)</li>
+                <li>AsyncDataService (async wrapper)</li>
+            </ul>
+            <a href="services.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>6. UI Architecture</h3>
+            <p>Swing UI component hierarchy and custom components.</p>
+            <ul>
+                <li>Component hierarchy</li>
+                <li>FiltersPanel</li>
+                <li>TaskTablePanel</li>
+                <li>NotificationButton & Center</li>
+            </ul>
+            <a href="ui.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>7. Notification System</h3>
+            <p>Desktop notification architecture and implementation.</p>
+            <ul>
+                <li>System tray integration</li>
+                <li>Notification types</li>
+                <li>Persistence and tracking</li>
+            </ul>
+            <a href="notifications.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>8. Caching Strategy</h3>
+            <p>Cache implementation, policies, and invalidation.</p>
+            <ul>
+                <li>SimpleCacheService implementation</li>
+                <li>TTL-based expiration</li>
+                <li>Cache policies by operation</li>
+            </ul>
+            <a href="caching.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>9. Security</h3>
+            <p>Authentication, authorization, and security best practices.</p>
+            <ul>
+                <li>API key vs Basic Auth</li>
+                <li>SSL/TLS configuration</li>
+                <li>Input validation</li>
+            </ul>
+            <a href="security.html">Read more →</a>
+        </div>
+
+        <div class="card">
+            <h3>10. Deployment</h3>
+            <p>Build process, packaging, and distribution.</p>
+            <ul>
+                <li>Build requirements</li>
+                <li>JAR creation</li>
+                <li>Installation guide</li>
+                <li>System requirements</li>
+            </ul>
+            <a href="deployment.html">Read more →</a>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>📖 Related Documentation</h3>
+            <ul>
+                <li><a href="../config/index.html">Configuration Guide</a> - Complete configuration reference</li>
+                <li><a href="../developer/index.html">Developer Guide</a> - Quick start for developers</li>
+                <li><a href="../manual-es/index.html">User Manual</a> - End-user documentation (Spanish)</li>
+            </ul>
+        </div>
+
+        <div class="card" style="background: #f8f9fa;">
+            <h3>📄 Full Documentation</h3>
+            <p>For the complete technical architecture documentation in a single document, see:</p>
+            <p><code>TECHNICAL_ARCHITECTURE.md</code> in the project root directory.</p>
+        </div>
+    </div>
+</body>
+
+</html>

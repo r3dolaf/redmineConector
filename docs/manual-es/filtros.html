@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros y Búsqueda - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html">1. Introducción</a>
+            <a href="instalacion.html">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html">4. Gestión de Tareas</a>
+            <a href="filtros.html" class="active">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html">6. Notificaciones</a>
+            <a href="gemelas.html">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html">9. Informes y Métricas</a>
+            <a href="offline.html">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="tareas.html" class="back-link">← Anterior: Gestión de Tareas</a>
+
+        <h1>5. Filtros y Búsqueda</h1>
+
+        <h2>5.1 Búsqueda Básica</h2>
+
+        <div class="card">
+            <h3>Por ID</h3>
+            <ul>
+                <li>Escribe el número de tarea en campo "ID"</li>
+                <li>Búsqueda exacta (debe coincidir completamente)</li>
+                <li>Útil cuando conoces el número exacto</li>
+            </ul>
+            <p><strong>Ejemplo:</strong> Buscar <code>1234</code> mostrará solo la tarea #1234</p>
+        </div>
+
+        <div class="card">
+            <h3>Por Asunto</h3>
+            <ul>
+                <li>Escribe palabras clave en campo "Asunto"</li>
+                <li>Búsqueda en tiempo real (mientras escribes)</li>
+                <li>No distingue mayúsculas/minúsculas</li>
+                <li>Busca en el título de la tarea</li>
+            </ul>
+            <p><strong>Ejemplo:</strong> Buscar <code>login</code> mostrará todas las tareas con "login" en el asunto
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Exclusión de Palabras</h3>
+            <ul>
+                <li>Escribe palabras a excluir en campo "Excluir"</li>
+                <li>Separa múltiples palabras con comas</li>
+                <li>Oculta tareas que contengan esas palabras</li>
+            </ul>
+            <p><strong>Ejemplo:</strong> Excluir <code>test, reunión</code> ocultará tareas con esas palabras</p>
+        </div>
+
+        <h2>5.2 Filtros por Fecha</h2>
+
+        <div class="card">
+            <h3>Rango de Fechas</h3>
+            <ol>
+                <li>Click en campo "Desde" → seleccionar fecha en calendario</li>
+                <li>Click en campo "Hasta" → seleccionar fecha en calendario</li>
+                <li>Solo se mostrarán tareas creadas/actualizadas en ese rango</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Limpiar Fechas</h3>
+            <p>Botón "✕" junto a cada campo de fecha para limpiar individualmente</p>
+        </div>
+
+        <h2>5.3 Filtros Multi-selección</h2>
+
+        <div class="card">
+            <h3>Cómo Usar</h3>
+            <ol>
+                <li>Click en dropdown (Estado, Tracker, Asignado, etc.)</li>
+                <li>Marcar/desmarcar opciones deseadas</li>
+                <li>Click fuera del dropdown para aplicar</li>
+                <li>Puedes seleccionar múltiples opciones</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Filtro de Estado</h3>
+            <p>Opciones típicas:</p>
+            <ul>
+                <li>Nuevo</li>
+                <li>En Progreso</li>
+                <li>Resuelto</li>
+                <li>Feedback</li>
+                <li>Cerrado</li>
+                <li>Rechazado</li>
+            </ul>
+            <p><em>Las opciones dependen de la configuración de tu Redmine</em></p>
+        </div>
+
+        <div class="card">
+            <h3>Filtro de Tracker</h3>
+            <p>Tipos de tarea:</p>
+            <ul>
+                <li>Error (Bug)</li>
+                <li>Funcionalidad (Feature)</li>
+                <li>Soporte (Support)</li>
+                <li>Tarea (Task)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Filtro de Asignado</h3>
+            <p>Opciones especiales:</p>
+            <ul>
+                <li><strong>⭐ A mí mismo</strong> - Filtra tareas asignadas al usuario actual</li>
+                <li><strong>⚪ Sin Asignar</strong> - Filtra tareas sin responsable</li>
+                <li>Lista de todos los usuarios del proyecto</li>
+            </ul>
+        </div>
+
+        <h2>5.4 Sincronización Inteligente de Filtros</h2>
+
+        <div class="alert alert-info">
+            <h3>🔄 Tracker → Estado</h3>
+            <p>Al seleccionar un Tracker, el filtro de Estado se actualiza automáticamente para mostrar solo estados
+                aplicables a ese tipo de tarea.</p>
+            <p><strong>Ejemplo:</strong> Si seleccionas "Error", solo verás estados válidos para errores.</p>
+        </div>
+
+        <h2>5.5 Búsqueda Global (Command Palette)</h2>
+
+        <div class="card" style="background: #e3f2fd; border-left: 4px solid #2196f3;">
+            <h3>⌨️ Atajo: Ctrl+P</h3>
+            <p>La búsqueda global es la forma más rápida de encontrar cualquier tarea en todos tus servidores.</p>
+        </div>
+
+        <div class="card">
+            <h3>Funcionalidad</h3>
+            <ul>
+                <li>Busca en <strong>todos los clientes</strong> simultáneamente</li>
+                <li>Busca por ID o palabras clave</li>
+                <li>Resultados en tiempo real</li>
+                <li>Navegación con flechas ↑↓</li>
+                <li>Enter para abrir tarea (cambia automáticamente a pestaña correcta)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Ejemplo de Uso</h3>
+            <ol>
+                <li>Presionar <code>Ctrl+P</code></li>
+                <li>Escribir "login bug"</li>
+                <li>Ver resultados de todos los servidores</li>
+                <li>Seleccionar con flechas ↑↓</li>
+                <li>Presionar <code>Enter</code> para abrir</li>
+            </ol>
+        </div>
+
+        <h2>5.6 Análisis de Palabras Clave</h2>
+
+        <div class="card">
+            <h3>Acceso</h3>
+            <p>Botón "Palabras Clave" en panel de filtros</p>
+        </div>
+
+        <div class="card">
+            <h3>Funcionalidad</h3>
+            <ul>
+                <li>Analiza asuntos de todas las tareas visibles</li>
+                <li>Muestra palabras más frecuentes</li>
+                <li>Útil para identificar temas recurrentes</li>
+                <li>Ayuda a encontrar patrones en el proyecto</li>
+            </ul>
+        </div>
+
+        <h2>5.7 Limpiar Filtros</h2>
+
+        <div class="card">
+            <h3>Métodos</h3>
+            <ul>
+                <li><strong>Botón "Limpiar Filtros"</strong> - Resetea todos los filtros</li>
+                <li><strong>Atajo Ctrl+L</strong> - Mismo efecto</li>
+            </ul>
+            <p>Vuelve a mostrar todas las tareas sin ningún filtro aplicado</p>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>💡 Consejos de Búsqueda Eficiente</h3>
+            <ul>
+                <li>Usa <strong>Ctrl+P</strong> para búsquedas rápidas entre todos los servidores</li>
+                <li>Combina múltiples filtros para búsquedas precisas</li>
+                <li>Usa <strong>Exclusión</strong> para eliminar ruido de los resultados</li>
+                <li>El filtro <strong>"A mí mismo"</strong> es perfecto para ver tu trabajo pendiente</li>
+                <li><strong>Palabras Clave</strong> ayuda a descubrir temas recurrentes en el proyecto</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-warning">
+            <h3>⚠️ Nota sobre Rendimiento</h3>
+            <p>Si tienes muchas tareas (>500), los filtros pueden tardar unos segundos en aplicarse. Considera aumentar
+                el límite de tareas en la configuración si necesitas ver más resultados.</p>
+        </div>
+
+        <div
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; display: flex; justify-content: space-between;">
+            <a href="tareas.html" class="btn" style="background: #95a5a6;">← Anterior: Gestión de Tareas</a>
+            <a href="notificaciones.html" class="btn">Siguiente: Notificaciones →</a>
+        </div>
+    </div>
+</body>
+
+</html>

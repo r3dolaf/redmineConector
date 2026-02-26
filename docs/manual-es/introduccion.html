@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .feature-card h4 {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html" class="active">1. Introducción</a>
+            <a href="instalacion.html">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html">4. Gestión de Tareas</a>
+            <a href="filtros.html">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html">6. Notificaciones</a>
+            <a href="gemelas.html">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html">9. Informes y Métricas</a>
+            <a href="offline.html">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="index.html" class="back-link">← Volver al índice</a>
+
+        <h1>1. Introducción</h1>
+
+        <div class="card">
+            <p><strong>Redmine Connector Pro</strong> es una aplicación de escritorio que proporciona una interfaz
+                mejorada para gestionar proyectos de Redmine. Diseñada para maximizar la productividad, ofrece
+                funcionalidades avanzadas que van más allá de la interfaz web estándar de Redmine.</p>
+        </div>
+
+        <h2>Características Principales</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>🌐 Multi-Instancia</h4>
+                <p>Gestiona múltiples servidores Redmine simultáneamente desde una sola aplicación. Ideal para trabajar
+                    con clientes y servidores internos.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>📡 Modo Offline</h4>
+                <p>Trabaja sin conexión con caché inteligente. Accede a tus tareas incluso cuando no hay internet
+                    disponible.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>🔔 Notificaciones</h4>
+                <p>Recibe notificaciones de escritorio en tiempo real para nuevas tareas, asignaciones y cambios
+                    importantes.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>🔄 Sincronización</h4>
+                <p>Sincroniza tareas gemelas entre servidores diferentes. Clona y cierra tareas relacionadas con un solo
+                    clic.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>🔍 Búsqueda Avanzada</h4>
+                <p>Filtros potentes y búsqueda global entre todos tus servidores. Encuentra lo que necesitas en
+                    segundos.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>📊 Informes Visuales</h4>
+                <p>Dashboard con métricas y gráficos. Exporta informes de horas y estadísticas fácilmente.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>🎨 Personalizable</h4>
+                <p>Temas personalizables, colores de estado configurables y columnas ajustables a tu gusto.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4>⌨️ Atajos de Teclado</h4>
+                <p>Flujo de trabajo rápido con atajos de teclado para todas las operaciones comunes.</p>
+            </div>
+        </div>
+
+        <h2>¿Para Quién es Esta Aplicación?</h2>
+
+        <div class="card">
+            <h3>👨‍💼 Gestores de Proyecto</h3>
+            <ul>
+                <li>Vista consolidada de múltiples proyectos</li>
+                <li>Informes y métricas visuales</li>
+                <li>Gestión eficiente de tareas en lote</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>👨‍💻 Desarrolladores</h3>
+            <ul>
+                <li>Acceso rápido a tareas asignadas</li>
+                <li>Registro de tiempo simplificado</li>
+                <li>Atajos de teclado para máxima productividad</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🏢 Equipos Distribuidos</h3>
+            <ul>
+                <li>Sincronización entre servidor de cliente y servidor interno</li>
+                <li>Modo offline para trabajo remoto</li>
+                <li>Notificaciones en tiempo real</li>
+            </ul>
+        </div>
+
+        <h2>Ventajas sobre la Interfaz Web</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Redmine Web</th>
+                    <th>Redmine Connector</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Múltiples servidores</td>
+                    <td>❌ Pestañas separadas</td>
+                    <td>✅ Vista unificada</td>
+                </tr>
+                <tr>
+                    <td>Modo offline</td>
+                    <td>❌ No disponible</td>
+                    <td>✅ Caché inteligente</td>
+                </tr>
+                <tr>
+                    <td>Notificaciones</td>
+                    <td>⚠️ Solo email</td>
+                    <td>✅ Escritorio en tiempo real</td>
+                </tr>
+                <tr>
+                    <td>Búsqueda global</td>
+                    <td>❌ Por servidor</td>
+                    <td>✅ Todos los servidores</td>
+                </tr>
+                <tr>
+                    <td>Sincronización gemelas</td>
+                    <td>❌ Manual</td>
+                    <td>✅ Automática</td>
+                </tr>
+                <tr>
+                    <td>Atajos de teclado</td>
+                    <td>⚠️ Limitados</td>
+                    <td>✅ Completos</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-success">
+            <h3>🚀 Próximos Pasos</h3>
+            <p>Ahora que conoces las características, continúa con:</p>
+            <ul>
+                <li><a href="instalacion.html">Instalación y Configuración Inicial</a> - Configura tu primera conexión
+                </li>
+                <li><a href="interfaz.html">Interfaz Principal</a> - Familiarízate con la aplicación</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; text-align: right;">
+            <a href="instalacion.html" class="btn">Siguiente: Instalación →</a>
+        </div>
+    </div>
+</body>
+
+</html>

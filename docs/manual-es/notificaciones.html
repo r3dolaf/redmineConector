@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notificaciones - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .notification-type {
+            background: white;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html">1. Introducción</a>
+            <a href="instalacion.html">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html">4. Gestión de Tareas</a>
+            <a href="filtros.html">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html" class="active">6. Notificaciones</a>
+            <a href="gemelas.html">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html">9. Informes y Métricas</a>
+            <a href="offline.html">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="filtros.html" class="back-link">← Anterior: Filtros y Búsqueda</a>
+
+        <h1>6. Sistema de Notificaciones</h1>
+
+        <h2>6.1 Tipos de Notificaciones</h2>
+
+        <div class="notification-type">
+            <h4>🆕 Nueva Tarea Creada</h4>
+            <p>Cuando creas una tarea nueva en cualquier servidor</p>
+        </div>
+
+        <div class="notification-type">
+            <h4>📋 Nueva Tarea Asignada</h4>
+            <p>Cuando alguien te asigna una tarea</p>
+        </div>
+
+        <div class="notification-type">
+            <h4>🔄 Cambio de Estado</h4>
+            <p>Cuando cambia el estado de una tarea que sigues</p>
+        </div>
+
+        <div class="notification-type">
+            <h4>💬 Nuevo Comentario</h4>
+            <p>Cuando alguien comenta en tu tarea</p>
+        </div>
+
+        <div class="notification-type">
+            <h4>📅 Fecha Límite Próxima</h4>
+            <p>Recordatorio de vencimiento próximo</p>
+        </div>
+
+        <div class="notification-type">
+            <h4>⚠️ Tarea Vencida</h4>
+            <p>Alerta de tarea con fecha pasada</p>
+        </div>
+
+        <h2>6.2 Notificaciones de Escritorio</h2>
+
+        <div class="card">
+            <h3>Requisitos</h3>
+            <ul>
+                <li>Sistema operativo con soporte de bandeja del sistema</li>
+                <li>Permisos de notificaciones habilitados</li>
+                <li>Aplicación ejecutándose</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Comportamiento</h3>
+            <ul>
+                <li>Aparecen en esquina de pantalla (según SO)</li>
+                <li>Duración: 5-10 segundos</li>
+                <li>Click en notificación para abrir tarea</li>
+                <li>Sonido opcional (según configuración del SO)</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>🖥️ Compatibilidad por Sistema Operativo</h3>
+            <ul>
+                <li><strong>Windows 7+:</strong> ✅ Soporte completo</li>
+                <li><strong>Linux:</strong> ✅ Requiere sistema de bandeja (GNOME, KDE, etc.)</li>
+                <li><strong>macOS:</strong> ✅ Soporte nativo</li>
+            </ul>
+        </div>
+
+        <h2>6.3 Centro de Notificaciones</h2>
+
+        <div class="card">
+            <h3>Acceso</h3>
+            <p>Click en botón 🔔 en la esquina derecha de la barra de menú</p>
+        </div>
+
+        <div class="card">
+            <h3>Funcionalidades</h3>
+            <ul>
+                <li><strong>Lista de notificaciones</strong> - Historial de todas las notificaciones recientes</li>
+                <li><strong>Badge con contador</strong> - Número de notificaciones no leídas</li>
+                <li><strong>Marcar como leída/no leída</strong> - Control individual</li>
+                <li><strong>Limpiar todas</strong> - Borrar todo el historial</li>
+                <li><strong>Click en notificación</strong> - Navega a la tarea correspondiente</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Persistencia</h3>
+            <ul>
+                <li>Historial guardado entre sesiones</li>
+                <li>Máximo 100 notificaciones</li>
+                <li>Las más antiguas se eliminan automáticamente</li>
+            </ul>
+        </div>
+
+        <h2>6.4 Configuración de Notificaciones</h2>
+
+        <div class="card">
+            <h3>Prevención de Duplicados</h3>
+            <p>El sistema recuerda qué tareas ya han sido notificadas:</p>
+            <ul>
+                <li>No se repiten notificaciones para la misma tarea</li>
+                <li>Tracking persistente entre sesiones</li>
+                <li>Máximo 1000 IDs rastreados</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Notificaciones Automáticas</h3>
+            <p>Se activan automáticamente al refrescar datos:</p>
+            <ul>
+                <li>Detecta tareas nuevas asignadas en última hora</li>
+                <li>Distingue entre tareas creadas por ti vs asignadas por otros</li>
+                <li>Solo notifica cambios relevantes</li>
+            </ul>
+        </div>
+
+        <h2>6.5 Archivos de Persistencia</h2>
+
+        <div class="card">
+            <h3>Ubicación</h3>
+            <p>Mismo directorio que <code>RedmineConnector.jar</code></p>
+        </div>
+
+        <div class="card">
+            <h3>Archivos</h3>
+            <table>
+                <tr>
+                    <th>Archivo</th>
+                    <th>Contenido</th>
+                </tr>
+                <tr>
+                    <td><code>.redmine_notifications.dat</code></td>
+                    <td>Historial de notificaciones (max 100)</td>
+                </tr>
+                <tr>
+                    <td><code>.redmine_notified_tasks.dat</code></td>
+                    <td>IDs de tareas ya notificadas (max 1000)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="alert alert-warning">
+            <h3>⚠️ Limpieza Automática</h3>
+            <p>Los archivos se limpian automáticamente cuando exceden los límites. No es necesario borrarlos
+                manualmente.</p>
+        </div>
+
+        <h2>6.6 Solución de Problemas</h2>
+
+        <div class="card">
+            <h3>No recibo notificaciones</h3>
+            <p><strong>Verifica:</strong></p>
+            <ul>
+                <li>Permisos de notificaciones del sistema operativo</li>
+                <li>Sistema de bandeja soportado</li>
+                <li>Aplicación ejecutándose (no cerrada)</li>
+                <li>Icono de bandeja visible en barra de tareas</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Notificaciones duplicadas</h3>
+            <p><strong>Solución:</strong></p>
+            <ol>
+                <li>Cierra la aplicación</li>
+                <li>Borra <code>.redmine_notified_tasks.dat</code></li>
+                <li>Reinicia la aplicación</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Demasiadas notificaciones</h3>
+            <p><strong>Opciones:</strong></p>
+            <ul>
+                <li>Actualmente no hay forma de desactivarlas globalmente</li>
+                <li>Puedes cerrar el Centro de Notificaciones</li>
+                <li>Las notificaciones del sistema seguirán apareciendo</li>
+                <li>Considera minimizar la aplicación en lugar de cerrarla</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>💡 Mejores Prácticas</h3>
+            <ul>
+                <li>Revisa el Centro de Notificaciones periódicamente</li>
+                <li>Marca como leídas las notificaciones procesadas</li>
+                <li>Usa "Limpiar todas" cuando el historial sea muy largo</li>
+                <li>Click en notificación para ir directamente a la tarea</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>🔔 Funcionalidades Futuras</h3>
+            <p>Próximas mejoras planificadas:</p>
+            <ul>
+                <li>Configuración de tipos de notificaciones</li>
+                <li>Filtros de notificaciones por proyecto/cliente</li>
+                <li>Sonidos personalizables</li>
+                <li>Notificaciones por email (opcional)</li>
+            </ul>
+        </div>
+
+        <div
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; display: flex; justify-content: space-between;">
+            <a href="filtros.html" class="btn" style="background: #95a5a6;">← Anterior: Filtros y Búsqueda</a>
+            <a href="gemelas.html" class="btn">Siguiente: Tareas Gemelas →</a>
+        </div>
+    </div>
+</body>
+
+</html>

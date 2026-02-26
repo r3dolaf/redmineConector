@@ -1,0 +1,26 @@
+FOOD & DRINK
+============
+
+--- FRUTAS (FRUIT) ---
+🍇 🍈 🍉 🍊 🍋 🍌 🍍 🥭 🍎 🍏 🍐 🍑 🍒 🍓 🫐 🥝 🍅 🫒 🥥 🥑
+
+--- VERDURAS (VEGETABLES) ---
+🍆 🥔 🥕 🌽 🌶 🫑 🥒 🥬 🥦 🧄 🧅 🍄 🥜 🌰
+
+--- COMIDA PREPARADA (PREPARED FOOD) ---
+🍞 🥐 🥖 🫓 🥨 🥯 🥞 🧇 🧀 🍖 🍗 🥩 🥓 🍔 🍟 🍕 🌭 🥪 🌮 🌯 🫔 🥙 🧆 🥚 🍳 🥘 🍲 🫕 🥣 🥗 🍿 🧈 🧂 🥫
+
+--- ASIÁTICA (ASIAN) ---
+🍱 🍘 🍙 🍚 🍛 🍜 🍝 🍠 🍢 🍣 🍤 🍥 🥮 🍡 🥟 🥠 🥡
+
+--- MARISCOS (SEAFOOD) ---
+🦀 🦞 🦐 🦑 🦪
+
+--- DULCES (SWEETS) ---
+🍦 🍧 🍨 🍩 🍪 🎂 🍰 🧁 🥧 🍫 🍬 🍭 🍮 🍯
+
+--- BEBIDAS (DRINK) ---
+🍼 🥛 ☕ 🫖 🍵 🍶 🍾 🍷 🍸 🍹 🍺 🍻 🥂 🥃 🥤 🧋 🧃 🧉 🧊
+
+--- UTENSILIOS (DISHWARE) ---
+🥢 🍽 🍴 🥄 🔪 🏺

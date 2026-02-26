@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalación - Manual de Usuario</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .step {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .step h4 {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📖 Manual de Usuario</h3>
+        <nav>
+            <a href="index.html">Índice</a>
+            <a href="introduccion.html">1. Introducción</a>
+            <a href="instalacion.html" class="active">2. Instalación</a>
+            <a href="interfaz.html">3. Interfaz Principal</a>
+            <a href="tareas.html">4. Gestión de Tareas</a>
+            <a href="filtros.html">5. Filtros y Búsqueda</a>
+            <a href="notificaciones.html">6. Notificaciones</a>
+            <a href="gemelas.html">7. Tareas Gemelas</a>
+            <a href="tiempo.html">8. Registro de Tiempo</a>
+            <a href="informes.html">9. Informes y Métricas</a>
+            <a href="offline.html">10. Modo Offline</a>
+            <a href="personalizacion.html">11. Personalización</a>
+            <a href="atajos.html">12. Atajos de Teclado</a>
+            <a href="faq.html">13. FAQ</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="introduccion.html" class="back-link">← Anterior: Introducción</a>
+
+        <h1>2. Instalación y Configuración Inicial</h1>
+
+        <h2>2.1 Requisitos del Sistema</h2>
+
+        <div class="card">
+            <h3>Requisitos Mínimos</h3>
+            <ul>
+                <li><strong>Java:</strong> JRE 8 o superior</li>
+                <li><strong>RAM:</strong> 512 MB</li>
+                <li><strong>Disco:</strong> 100 MB libres</li>
+                <li><strong>Red:</strong> Acceso al servidor Redmine</li>
+                <li><strong>SO:</strong> Windows 7+, Linux, macOS</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Requisitos Recomendados</h3>
+            <ul>
+                <li><strong>Java:</strong> JRE 11 o superior</li>
+                <li><strong>RAM:</strong> 1 GB</li>
+                <li><strong>Disco:</strong> 500 MB (para caché y adjuntos)</li>
+                <li><strong>Red:</strong> Conexión estable a internet</li>
+            </ul>
+        </div>
+
+        <h2>2.2 Instalación</h2>
+
+        <div class="step">
+            <h4>Paso 1: Verificar Java</h4>
+            <p>Abre una terminal/consola y ejecuta:</p>
+            <pre><code>java -version</code></pre>
+            <p>Deberías ver algo como: <code>java version "1.8.0_xxx"</code> o superior.</p>
+            <p>Si no tienes Java instalado, descárgalo de: <a href="https://www.java.com"
+                    target="_blank">https://www.java.com</a></p>
+        </div>
+
+        <div class="step">
+            <h4>Paso 2: Descargar Redmine Connector</h4>
+            <p>Descarga el archivo <code>RedmineConnector.jar</code> desde:</p>
+            <ul>
+                <li>Repositorio del proyecto</li>
+                <li>Servidor de distribución de tu empresa</li>
+                <li>O compílalo desde el código fuente</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Paso 3: Colocar el Archivo</h4>
+            <p>Coloca <code>RedmineConnector.jar</code> en una carpeta de tu elección, por ejemplo:</p>
+            <ul>
+                <li><strong>Windows:</strong> <code>C:\Programas\RedmineConnector\</code></li>
+                <li><strong>Linux:</strong> <code>~/redmine-connector/</code></li>
+                <li><strong>macOS:</strong> <code>/Applications/RedmineConnector/</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Paso 4: Ejecutar la Aplicación</h4>
+            <p><strong>Opción A - Doble clic:</strong></p>
+            <p>Haz doble clic en <code>RedmineConnector.jar</code> (si Java está asociado con archivos .jar)</p>
+
+            <p><strong>Opción B - Línea de comandos:</strong></p>
+            <pre><code>java -jar RedmineConnector.jar</code></pre>
+
+            <p><strong>Opción C - Script de inicio (recomendado):</strong></p>
+            <p>Crea un archivo <code>start.bat</code> (Windows) o <code>start.sh</code> (Linux/Mac):</p>
+            <pre><code># Windows (start.bat)
+@echo off
+java -jar RedmineConnector.jar
+
+# Linux/Mac (start.sh)
+#!/bin/bash
+java -jar RedmineConnector.jar</code></pre>
+        </div>
+
+        <h2>2.3 Configuración Inicial</h2>
+
+        <div class="alert alert-info">
+            <p><strong>Primera vez:</strong> Al iniciar por primera vez, la aplicación estará vacía. Necesitas
+                configurar al menos un cliente Redmine.</p>
+        </div>
+
+        <div class="step">
+            <h4>Paso 1: Abrir Gestor de Clientes</h4>
+            <p>En el menú principal, ve a: <strong>Archivo → Gestor de Clientes</strong></p>
+        </div>
+
+        <div class="step">
+            <h4>Paso 2: Agregar Nuevo Cliente</h4>
+            <p>Haz clic en el botón <strong>"Agregar Cliente"</strong></p>
+        </div>
+
+        <div class="step">
+            <h4>Paso 3: Completar Datos de Conexión</h4>
+            <table>
+                <tr>
+                    <th>Campo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+                <tr>
+                    <td><strong>Nombre</strong></td>
+                    <td>Nombre descriptivo para identificar este servidor</td>
+                    <td>Servidor Producción</td>
+                </tr>
+                <tr>
+                    <td><strong>URL</strong></td>
+                    <td>Dirección del servidor Redmine (debe terminar en /)</td>
+                    <td>https://redmine.empresa.com/</td>
+                </tr>
+                <tr>
+                    <td><strong>Clave API</strong></td>
+                    <td>Tu clave de acceso personal de Redmine</td>
+                    <td>abc123def456...</td>
+                </tr>
+                <tr>
+                    <td><strong>ID Proyecto</strong></td>
+                    <td>Identificador del proyecto (visible en URL)</td>
+                    <td>mi-proyecto</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="step">
+            <h4>Paso 4: Obtener la Clave API</h4>
+            <ol>
+                <li>Abre Redmine en tu navegador</li>
+                <li>Inicia sesión con tu usuario</li>
+                <li>Ve a <strong>Mi cuenta</strong> (esquina superior derecha)</li>
+                <li>En la columna derecha, busca <strong>"Clave de acceso API"</strong></li>
+                <li>Haz clic en <strong>"Mostrar"</strong></li>
+                <li>Copia la clave completa</li>
+                <li>Pégala en el campo "Clave API" de Redmine Connector</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Paso 5: Obtener el ID del Proyecto</h4>
+            <ol>
+                <li>Abre tu proyecto en Redmine</li>
+                <li>Mira la URL del navegador</li>
+                <li>El ID está después de <code>/projects/</code></li>
+                <li>Ejemplo: <code>https://redmine.com/projects/<strong>mi-proyecto</strong></code></li>
+                <li>Copia solo la parte en negrita</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Paso 6: Guardar y Probar</h4>
+            <ol>
+                <li>Haz clic en <strong>"Guardar"</strong></li>
+                <li>La aplicación intentará conectarse</li>
+                <li>Si todo está correcto, verás una nueva pestaña con tu proyecto</li>
+                <li>Haz clic en <strong>"Refrescar"</strong> para cargar las tareas</li>
+            </ol>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>✅ ¡Configuración Completada!</h3>
+            <p>Ya tienes Redmine Connector configurado y listo para usar. Ahora puedes:</p>
+            <ul>
+                <li>Ver y gestionar tus tareas</li>
+                <li>Crear nuevas tareas</li>
+                <li>Registrar tiempo</li>
+                <li>Y mucho más...</li>
+            </ul>
+        </div>
+
+        <h2>2.4 Configuración Adicional (Opcional)</h2>
+
+        <div class="card">
+            <h3>Límite de Tareas</h3>
+            <p>Por defecto, se cargan hasta 100 tareas. Para proyectos grandes, puedes aumentar este límite en la
+                configuración del cliente.</p>
+        </div>
+
+        <div class="card">
+            <h3>Intervalo de Actualización</h3>
+            <p>Por defecto, la aplicación actualiza datos cada 5 minutos. Puedes ajustar este intervalo según tus
+                necesidades.</p>
+        </div>
+
+        <div class="card">
+            <h3>Ruta de Descargas</h3>
+            <p>Configura dónde se guardarán los adjuntos y exportaciones de tareas.</p>
+        </div>
+
+        <div class="alert alert-warning">
+            <h3>⚠️ Solución de Problemas</h3>
+            <p>Si tienes problemas al conectar:</p>
+            <ul>
+                <li>Verifica que la URL termine en <code>/</code></li>
+                <li>Asegúrate de que la clave API sea correcta (sin espacios extra)</li>
+                <li>Comprueba que el ID del proyecto sea exacto (case-sensitive)</li>
+                <li>Verifica que tengas permisos en el proyecto</li>
+                <li>Consulta el panel de log en la parte inferior para más detalles</li>
+            </ul>
+        </div>
+
+        <div
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e8ed; display: flex; justify-content: space-between;">
+            <a href="introduccion.html" class="btn" style="background: #95a5a6;">← Anterior: Introducción</a>
+            <a href="interfaz.html" class="btn">Siguiente: Interfaz Principal →</a>
+        </div>
+    </div>
+</body>
+
+</html>

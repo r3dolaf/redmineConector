@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Configuración - Redmine Connector</title>
+    <link rel="stylesheet" href="../shared.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar h3 {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .sidebar nav a.active {
+            background: #34495e;
+            border-left-color: #3498db;
+            font-weight: 600;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .property {
+            background: #f8f9fa;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d63031;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>⚙️ Guía de Configuración</h3>
+        <nav>
+            <a href="index.html" class="active">Índice</a>
+            <a href="structure.html">Estructura de Archivos</a>
+            <a href="clients.html">Configuración de Clientes</a>
+            <a href="connection.html">Ajustes de Conexión</a>
+            <a href="behavior.html">Comportamiento</a>
+            <a href="twin-sync.html">Sincronización Gemelas</a>
+            <a href="notifications.html">Notificaciones</a>
+            <a href="advanced.html">Ajustes Avanzados</a>
+            <a href="troubleshooting.html">Troubleshooting</a>
+            <a href="examples.html">Ejemplos Completos</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <a href="../index.html" class="back-link">← Volver al índice principal</a>
+
+        <h1>⚙️ Guía de Configuración</h1>
+
+        <div class="card">
+            <p>Referencia completa de todas las opciones de configuración disponibles en Redmine Connector Pro.</p>
+        </div>
+
+        <h2>Secciones de Configuración</h2>
+
+        <div class="card">
+            <h3>1. Estructura de Archivos</h3>
+            <p>Ubicación y formato del archivo de configuración principal.</p>
+            <ul>
+                <li>Archivo <code>redmine_config.properties</code></li>
+                <li>Formato Java Properties</li>
+                <li>Codificación UTF-8</li>
+            </ul>
+            <a href="structure.html">Leer más →</a>
+        </div>
+
+        <div class="card">
+            <h3>2. Configuración de Clientes</h3>
+            <p>Cómo configurar múltiples clientes Redmine.</p>
+            <ul>
+                <li>Lista de clientes (<span class="property">clients.list</span>)</li>
+                <li>Nombres de cliente</li>
+                <li>Orden de pestañas</li>
+            </ul>
+            <a href="clients.html">Leer más →</a>
+        </div>
+
+        <div class="card">
+            <h3>3. Ajustes de Conexión</h3>
+            <p>Configuración de URL, autenticación y proyecto.</p>
+            <ul>
+                <li>URL del servidor</li>
+                <li>API Key vs Usuario/Contraseña</li>
+                <li>ID del proyecto</li>
+            </ul>
+            <a href="connection.html">Leer más →</a>
+        </div>
+
+        <div class="card">
+            <h3>4. Configuración de Comportamiento</h3>
+            <p>Límites, intervalos y rutas de descarga.</p>
+            <ul>
+                <li>Límite de tareas (<span class="property">taskLimit</span>)</li>
+                <li>Intervalo de refresh (<span class="property">refreshInterval</span>)</li>
+                <li>Ruta de descargas (<span class="property">downloadPath</span>)</li>
+                <li>Mostrar cerradas por defecto</li>
+            </ul>
+            <a href="behavior.html">Leer más →</a>
+        </div>
+
+        <div class="card">
+            <h3>5. Sincronización de Tareas Gemelas</h3>
+            <p>Patrones de referencia y carpetas.</p>
+            <ul>
+                <li>Patrón de referencia (<span class="property">refPattern</span>)</li>
+                <li>Patrón de carpetas (<span class="property">folderPattern</span>)</li>
+                <li>Variables disponibles: <code>{id}</code>, <code>{subject}</code>, <code>{tracker}</code></li>
+            </ul>
+            <a href="twin-sync.html">Leer más →</a>
+        </div>
+
+        <div class="card">
+            <h3>6. Configuración de Notificaciones</h3>
+            <p>Tipos de notificaciones y persistencia.</p>
+            <ul>
+                <li>Tipos de notificaciones</li>
+                <li>Archivos de persistencia</li>
+                <li>Prevención de duplicados</li>
+            </ul>
+            <a href="notifications.html">Leer más →</a>
+        </div>
+
+        <div class="card">
+            <h3>7. Ajustes Avanzados</h3>
+            <p>Formato de adjuntos, colores y columnas.</p>
+            <ul>
+                <li>Formato de adjuntos (Textile/Markdown)</li>
+                <li>Colores de estado personalizados</li>
+                <li>Configuración de columnas</li>
+                <li>Idioma de la aplicación</li>
+            </ul>
+            <a href="advanced.html">Leer más →</a>
+        </div>
+
+        <div class="card">
+            <h3>8. Troubleshooting</h3>
+            <p>Solución de problemas comunes de configuración.</p>
+            <ul>
+                <li>Configuración no se carga</li>
+                <li>Fallos de conexión</li>
+                <li>Tareas faltantes</li>
+                <li>Rendimiento lento</li>
+            </ul>
+            <a href="troubleshooting.html">Leer más →</a>
+        </div>
+
+        <div class="card">
+            <h3>9. Ejemplos Completos</h3>
+            <p>Configuraciones de ejemplo para diferentes escenarios.</p>
+            <ul>
+                <li>Configuración básica (1 servidor)</li>
+                <li>Configuración multi-servidor</li>
+                <li>Configuración con sincronización gemelas</li>
+                <li>Checklist de validación</li>
+            </ul>
+            <a href="examples.html">Leer más →</a>
+        </div>
+
+        <div class="alert alert-warning">
+            <h3>⚠️ Importante</h3>
+            <p>Después de modificar <code>redmine_config.properties</code>, debes reiniciar la aplicación para que los
+                cambios surtan efecto.</p>
+        </div>
+
+        <div class="alert alert-info">
+            <h3>📖 Documentación Relacionada</h3>
+            <ul>
+                <li><a href="../manual-es/index.html">Manual de Usuario</a> - Cómo usar la aplicación</li>
+                <li><a href="../technical/index.html">Arquitectura Técnica</a> - Detalles de implementación</li>
+                <li><a href="../developer/index.html">Guía de Desarrollo</a> - Para desarrolladores</li>
+            </ul>
+        </div>
+
+        <div class="card" style="background: #f8f9fa;">
+            <h3>📄 Documentación Completa</h3>
+            <p>Para la guía de configuración completa en un solo documento, consulta:</p>
+            <p><code>CONFIGURATION_GUIDE.md</code> en el directorio raíz del proyecto.</p>
+        </div>
+    </div>
+</body>
+
+</html>
